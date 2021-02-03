@@ -47,10 +47,10 @@
           <tr>
               <td>{{ lancamento.pessoa }}</td>
               <td>{{ lancamento.descricao }}</td>
-              <td class="col-valor">{{ lancamento.vencimento }}</td>
-              <td class="col-valor">{{ lancamento.pagamento }}</td>
+              <td class="col-valor">{{ lancamento.vencimento | date:'dd/MM/y' }}</td>
+              <td class="col-valor">{{ lancamento.pagamento | date:'dd/MM/y' }}</td>
               <td class="col-valor2" [ngStyle]="{ color: lancamento.tipo === 'DESPESA' ? 'red' : 'blue' }">
-              {{ lancamento.valor }}</td>
+              {{ lancamento.valor | currency: 'BRL' }}</td>
               <td class="acoes">
                 <a pButton icon="pi pi-pencil" class="aButton" pTooltip="Editar" tooltipPosition="top"></a>
                 <button pButton icon="pi pi-trash" class="aButton" pTooltip="Excluir" tooltipPosition="top"></button>
